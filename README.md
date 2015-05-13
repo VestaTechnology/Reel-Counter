@@ -5,7 +5,7 @@ The reel counter has a sprocket gear with holes in it that the reels of parts ar
 
 [qs]: https://en.wikipedia.org/wiki/Linear_encoder#Output_signal_formats
 
-![Reel Counter and Sensors] (https://www.vestatech.com/wp-content/uploads/2014/01/Reel4Fig21.jpg  "Reel Counter and Sensors")
+![Reel Counter and Sensors] (https://github.com/VestaTechnology/Reel-Counter/blob/master/Reel4Fig2.jpg  "Reel Counter and Sensors")
 
 When the gear is turning, the voltage across the photodiodes looks a lot more like a sine wave than a square wave.  In order for the signal to be used for an interrupt on change, it needed some conditioning.  I fed the signals into a 2-channel comparator with simple dividers for reference voltages.  To make the output a clean square wave, I added hysteresis to each comparator channel.  
 
@@ -15,7 +15,7 @@ This [webpage][volt comp] has great information about voltage comparators and de
 
 The only circuit elements needed besides a Mercury 16 were some connections to control the contrast and back-lighting of an LCD, and 3 buttons to reset the count and change how many holes per part the reel has.
 
-![Circuit Schematic](https://www.vestatech.com/wp-content/uploads/2015/05/circuit.jpg "Circuit Schematic")
+![Circuit Schematic](https://github.com/VestaTechnology/Reel-Counter/blob/master/circuit.jpg "Circuit Schematic")
 
 ###Understanding the Code
 This project was completed when Vesta Technology was using MPLAB v8, so I'll only upload the source without and project files here.
@@ -30,10 +30,9 @@ __LCD__ module provides and easy interface between Mercury and an LCD.  It is a 
 
 __Main.c__ only contains a few function calls to initialize communications and an infinite while loop that calls the updateLCD function if the update flag has been set by the ISR.
 
-![Final Product](https://www.vestatech.com/wp-content/uploads/2015/05/Reel6Fig1.jpg "Final Product")
+![Final Product](https://github.com/VestaTechnology/Reel-Counter/blob/master/Reel6Fig1.jpg "Final Product")
 
 Next time you need a piece of equipment, I hope this can serve as inspiration to build it instead of buy it.  It was a great learning experience for me and does a great job showing off the capabilities of Mercury.  I haven't yet been able to crank the counter fast enough to cause timing issues.  Please share what you do with this project and submit a pull request with any changes and improvements!  As always, you can submit an issue, [contact us][contact] or send us an [email][mail] if you need help or have questions.
 
 [contact]: https://www.vestatech.com/support/contact-us/
 [mail]: mailto:support@vestatech.com?subj=Github/Mercury
-> Written with [StackEdit](https://stackedit.io/).
